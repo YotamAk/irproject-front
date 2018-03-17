@@ -1,0 +1,38 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Add Document:</div>
+      <div class="panel-body">
+
+        <form  class="form-horizontal" (submit)="addDocument()">
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="name">name</label>
+                    <input type="text" class="form-control"  placeholder="Document's name" required [(ngModel)]="model.name" name="name">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="Author">Author</label>
+                    <input type="text" class="form-control"  placeholder="Author' name" required [(ngModel)]="model.author" name="author">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="date">Date</label>
+                    <input type="date" class="form-control"  placeholder="Date" required [(ngModel)]="model.date" name="date">
+                </div>
+                </div>
+                <div class="form-group">
+                    <label for="summary">summary</label>
+                    <textarea class="form-control"  rows="3" cols="50" placeholder="summary" required [(ngModel)]="model.summary" name="summary"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="text">Text</label>
+                    <textarea class="form-control"  rows="8" cols="50" placeholder="text" required [(ngModel)]="text" name="text"></textarea>
+                </div>
+
+                <div class="form-row text-center">
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-success">Add</button>
+                    </div>
+                </div>
+        </form>
+
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="container">
+<h4>What you want to search?</h4>
+    <form class="form-control" (submit)="getSearch()">
+    <div>
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="query" name="query">
+        <button class="btn btn-outline-success my-2 my-sm-6" type="submit">Search</button>
+    </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" [(ngModel)]="soundex" name="soundex"> Soundex
+            </label>
+        </div>
+
+    </form>
+</div>
+
+<button id="openModalButton" [hidden]="true" data-toggle="modal" data-target="#myModal">Open Modal</button>
+<div id="myModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="container" *ngFor="let document of documents" routerLink="/text/{{document.id}}">
+    <ul class="list-inline">
+        <li class="list-inline-item"><h4>{{document.name}}</h4></li>
+        <li class="list-inline-item">{{document.author}}</li>
+        <li class="list-inline-item">{{document.date}}</li>
+    </ul>
+    <p>{{document.summary}}</p>
+  </div>

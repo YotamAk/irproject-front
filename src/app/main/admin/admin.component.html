@@ -1,0 +1,37 @@
+<h4>Admin</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <td>ID</td>  
+      <td>Name</td>
+      <td>Author</td>
+      <td>date</td>
+      <td>Summary</td>
+      <td>Parsed</td>
+      <td>Show</td>
+      <td width=275 align="center">Action</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let document of documents">
+      <td>{{document.id}}</td>
+      <td>{{document.name}}</td>
+      <td>{{document.author}}</td>
+      <td>{{document.date}}</td>
+      <td>{{document.summary}}</td>
+      <td>{{document.parsed}}</td>
+      <td>{{document.show}}</td>
+      <td width=275> 
+          <a class="btn btn-danger" (click)="noShow(document.id)">delete</a> 
+      </td>
+    </tr>
+  </tbody>
+ 
+</table>
+
+<div class="form-row text-center">
+  <div class="col-12">
+      <button [routerLink]="['/add-document']" type="submit" class="btn btn-primary">Add Documents</button>
+      <a  (click)="parseAllDocuments()" class="btn btn-success">Parse All</a>
+  </div>
+</div>
