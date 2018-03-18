@@ -12,18 +12,13 @@
         </div>
 
     </form>
+    <div  *ngIf="!buttonDisabled" class="alert alert-warning" role="alert">
+        invalid query
+    </div>
 </div>
 
-<button id="openModalButton" [hidden]="true" data-toggle="modal" data-target="#myModal">Open Modal</button>
-<div id="myModal" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-body">
-        <p>Some text in the modal.</p>
-      </div>
-    </div>
-  </div>
-</div>
+
+
 
   <div class="container" *ngFor="let document of documents" routerLink="/text/{{document.id}}">
     <ul class="list-inline">

@@ -12,6 +12,7 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
 export class SearchComponent implements OnInit {
   query : string;
   soundex : boolean;
+  buttonDisabled: boolean = true;
 
   constructor(
         private _AdminService:AdminService,
@@ -30,11 +31,12 @@ export class SearchComponent implements OnInit {
         .getSearch(this.query, this.soundex)
         .subscribe(documents => {
           if(documents == "invalid query"){
-            document.getElementById("openModalButton").click();
-            console.log("check");
+            this.buttonDisabled = false;
+            console.log(this.buttonDisabled);
           }
           this.documents = documents;
       } )
+        this.buttonDisabled = true;
   }
 
   getAllDocuments(){
