@@ -11,7 +11,7 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
 })
 export class SearchComponent implements OnInit {
   query : string;
-  soundex : boolean;
+  soundex : boolean = false;
   buttonDisabled: boolean = true;
 
   constructor(
@@ -46,6 +46,10 @@ export class SearchComponent implements OnInit {
           this.documents = documents;
               console.log(this.soundex);
       } )
+  }
+
+  goBack(){
+    this.router.navigate(['/search']);
   }
 
 }

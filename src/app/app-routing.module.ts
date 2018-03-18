@@ -18,7 +18,7 @@ import { TextComponent } from './main/text/text.component';
 
 const routes: Routes = [
 
-{path:"", redirectTo:"main", pathMatch:"full"},
+{path:"", redirectTo:"search", pathMatch:"full"},
 {path:"main", component:MainComponent},
 {path:"search", component:SearchComponent},
 {path:"admin", component:AdminComponent},
